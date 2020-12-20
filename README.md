@@ -149,6 +149,7 @@ type (onearr)
 
 
 
+```python
 ```
 one, ten 변수를 nd.array를 통해 onearr, tenarr에 numpy배열로 저장합니다.
 이들을 출력하면 위의 리스트에서 ,가 빠진 값이 나옵니다.
@@ -164,7 +165,7 @@ onearr.dtype
 
 
 
-```
+```python
 ```
 다음은 onearr 변수의 자료형을 출력합니다. 자료형에는 int(signed), uint(unsigned), float, bool등이 있습니다.
 
