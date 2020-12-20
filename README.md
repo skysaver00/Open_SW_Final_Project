@@ -31,7 +31,9 @@ Numpy는 파이썬에 1차원 이상의 배열, 행렬을 할 수 있게 지원�
 
 # Numpy VS 파이썬 List
 파이썬의 List는 파이썬이 기본적으로 제공하는 Numpy의 배열과 비교가 되는 데이터 구조입니다.
+
 Numpy가 파이썬의 List보다 훨씬 빠릅니다. 파이썬의 List는 포인터 주소값이 들어가있어서 리스트의 주소를 넣어두고, 그 주소로 메모리를 찾아가는 반면에,
+
 Numpy의 배열은 C언어의 배열처럼 데이터에 값이 직접들아갑니다. 이를 통해 고정된 값을 가지며, 파이썬의 List보다 더 빠른 연산이 가능합니다.
 
 또한 Numpy는 List보다 지원하는 함수, 기능들이 더 많아 사용하기 편합니다.
@@ -41,18 +43,23 @@ Numpy의 배열은 C언어의 배열처럼 데이터에 값이 직접들아갑�
 
 # Pandas란 무엇인가?
 Pandas 또는 판다스는 파이썬에서 사용하는 데이터 분석 라이브러리입니다
+
 Pandas는 테이블 형식의 데이터를 쉽게 처리할 수 있게 해줍니다.
+
 **Pandas역시 오픈소스 소프트웨어입니다.**
 
 # Pandas의 자료구조
 Pandas에서 사용하는 자료구조는 크게 두가지로 나뉩니다 첫번째는 Series, 두번째는 Data Frame입니다.
+
 두 자료구조의 가장 큰 차이점은 Series는 1차원 배열과 같고, Data Frame은 2차원 배열과 같은 형태를 가진다는 점입니다.
 
 # Numpy, Pandas 설치방법
 - 두 패키지 모두 파이썬이 설치되어 있어야 합니다.
+
 Window의 시작 버튼을 누르고, 명령 프롬프트(CMD)를 관리자 권한으로 실행한 뒤,
-**pip install numpy
-pip install pandas**를 입력합니다.
+
+**pip install numpy**
+**pip install pandas**를 입력합니다.
 
 이후 파이썬을 실행해서(Window 시작화면에서 IDLE 검색한 뒤 실행)
 **import numpy as np
