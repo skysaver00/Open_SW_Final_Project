@@ -628,6 +628,3 @@ print (np.sort(arr1)[::-1])
 
 
 ```python
-
-```
-
