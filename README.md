@@ -121,6 +121,7 @@ type (one)
 
 
 ```python
+```
 one = [1,2,3,4,5], ten = [10,20,30,40,50]으로
 one, ten 변수를 선언하고, 리스트를 저장합니다.
 
@@ -148,6 +149,10 @@ type (onearr)
 
 
 ```python
+```
+one, ten 변수를 nd.array를 통해 onearr, tenarr에 numpy배열로 저장합니다.
+이들을 출력하면 위의 리스트에서 ,가 빠진 값이 나옵니다.
+```
 onearr.dtype
 ```
 
@@ -160,6 +165,12 @@ onearr.dtype
 
 
 ```python
+```
+다음은 onearr 변수의 자료형을 출력합니다. 자료형에는 int(signed), uint(unsigned), float, bool등이 있습니다.
+
+int 오른쪽의 숫자는 비트를 뜻합니다. int32는 C언어의 int와 같은 자료형입니다.
+int64를 쓰면 long long과 같은 자료형입니다.
+```
 onearr.shape
 ```
 
@@ -172,6 +183,9 @@ onearr.shape
 
 
 ```python
+```
+다음은 onearr 배열의 크기를 확인할 수 있습니다. 5,는 5개의 값을 가진 1차원 배열이라는 뜻입니다.
+```
 arr2nd = np.array([[1,0,0],[0,1,0],[0,0,1],[1,1,1]])
 arr2nd.shape
 ```
@@ -185,6 +199,9 @@ arr2nd.shape
 
 
 ```python
+```
+이렇게 arr2nd배열을 2차원으로 만든뒤 shape를 입력하면 4 x 3의 2차원 배열이라는 것을 확인할 수 있습니다.
+```
 one.dtype
 ```
 
