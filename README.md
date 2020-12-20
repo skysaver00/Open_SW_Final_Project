@@ -626,5 +626,4 @@ print (np.sort(arr1)[::-1])
      27 17 13  9  8  1]
     
 
-
 ```python
