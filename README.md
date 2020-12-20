@@ -91,14 +91,13 @@ print (pd.__version__)
 
 
 ```python
-#np array 만들기
-#여기서부터는 array = 배열로 취급
+1. numpy, pandas 선언
 ```
 import numpy as np
 import pandas as pd로 해당 python notebook에서 numpy와 pandas를 불러옵니다.
 
 print (np._version_)은 해당 numpy의 버전을 출력합니다.
-
+#
 ```python
 one = [1,2,3,4,5]
 print (one)
@@ -111,22 +110,17 @@ type (one)
     [1, 2, 3, 4, 5]
     [10, 20, 30, 40, 50]
     
-
-
-
-
     list
 
-
-
-
-```python```
+```python
+2. 파이썬 List 만들기
+```
 
 one = [1,2,3,4,5], ten = [10,20,30,40,50]으로
 one, ten 변수를 선언하고, 리스트를 저장합니다.
 
 type(one)은 one의 타입을 출력합니다. list라고 나오게 됩니다.
-
+#
 ```
 onearr = np.array(one)
 tenarr = np.array(ten)
@@ -139,20 +133,15 @@ type (onearr)
 
     [1 2 3 4 5]
     [10 20 30 40 50]
-    
-
-
-
 
     numpy.ndarray
 
-
-
-
-```python```
+```python
+3. 파이썬 List를 numpy 배열로 바꾸기
 ```
 one, ten 변수를 nd.array를 통해 onearr, tenarr에 numpy배열로 저장합니다.
 이들을 출력하면 위의 리스트에서 ,가 빠진 값이 나옵니다.
+#
 ```
 onearr.dtype
 ```
@@ -165,12 +154,14 @@ onearr.dtype
 
 
 
-```python```
+```python
+4. 배열의 자료형
 ```
 다음은 onearr 변수의 자료형을 출력합니다. 자료형에는 int(signed), uint(unsigned), float, bool등이 있습니다.
 
 int 오른쪽의 숫자는 비트를 뜻합니다. int32는 C언어의 int와 같은 자료형입니다.
 int64를 쓰면 long long과 같은 자료형입니다.
+#
 ```
 onearr.shape
 ```
@@ -184,8 +175,10 @@ onearr.shape
 
 
 ```python
+5. 배열의 형태
 ```
 다음은 onearr 배열의 크기를 확인할 수 있습니다. 5,는 5개의 값을 가진 1차원 배열이라는 뜻입니다.
+#
 ```
 arr2nd = np.array([[1,0,0],[0,1,0],[0,0,1],[1,1,1]])
 arr2nd.shape
@@ -200,8 +193,10 @@ arr2nd.shape
 
 
 ```python
+6. 2차원 배열의 형태
 ```
 이렇게 arr2nd배열을 2차원으로 만든뒤 shape를 입력하면 4 x 3의 2차원 배열이라는 것을 확인할 수 있습니다.
+#
 ```
 one.dtype
 ```
@@ -220,6 +215,11 @@ one.dtype
 
 
 ```python
+7. numpy 함수는 numpy에서만
+```
+numpy의 함수를 이렇게 기본 파이썬 list에 적용해보려고 하면 오류가 뜨게 됩니다.
+#
+```
 sumarr = onearr + tenarr
 sumlist = one + ten
 print (sumarr)
@@ -232,9 +232,11 @@ print (sumlist)
 
 
 ```python
-#기본 배열 만드는 함수 -> 빠르게 배열 만들기
+8. numpy 배열과 List의 함수 인식 차이
 ```
-
+sumarr는 배열을 합한 것이고, sumlist는 리스트를 합한 것입니다.
+이렇게 배열은 값이 자동으로 더해지는 반면, 리스트는 뒤에 같아 붙이는 방법으로 인식한다는 차이점이 있습니다.
+#
 
 ```python
 arr1 = np.zeros(3)
@@ -254,6 +256,12 @@ print (arr2)
 
 
 ```python
+9. np.zeros
+```
+np.zeros 함수는 인자로 받는 크기만큼 값이 0인 배열을 만듭니다.
+인자 하나가 들어가면 1차원, 인자 2개가 들어가면 2차원 영배열을 만듭니다.
+#
+```
 arr1 = np.ones(3)
 arr2 = np.ones((5, 3))
 
@@ -271,6 +279,12 @@ print (arr2)
 
 
 ```python
+10. np.ones
+```
+np.zeros 함수는 인자로 받는 크기만큼 값이 1인 배열을 만듭니다.
+인자 하나가 들어가면 1차원, 인자 2개가 들어가면 2차원 일배열을 만듭니다.
+#
+```
 arr1 = np.identity(1)
 arr2 = np.identity(2)
 
@@ -285,6 +299,10 @@ print (arr2)
 
 
 ```python
+11. np.identity
+```
+np.identity는 단위행렬을 만듭니다. 인자는 하나가 들어가고, 들어간 숫자의 크기만큼의 단위행렬을 만듭니다.
+```
 arr1 = np.arange(100)
 arr2 = np.arange(96,100)
 
@@ -302,10 +320,11 @@ print (arr2)
 
 
 ```python
-#기본적인 배열의 연산
+12. np.arange
 ```
-
-
+np.arange는 인자로 받는 값만큼 1씩 증가하는 1차원 배열을 만듭니다.
+하나의 인자를 입력하면 0 ~ 인자의 크기 - 1, 두개의 인자가 들어가면 인자 값만큼의 크기를 나타냅니다.
+#
 ```python
 print (onearr)
 print (tenarr)
@@ -336,6 +355,14 @@ print (div)
 
 
 ```python
+13. 배열의 연산
+```
+배열의 연산은 크기가 서로 동일한 배열끼리만 연산을 합니다.
+배열이 서로 맞아 떨어지면 +, -, x, /를 모두 할 수 있습니다.
+
+**주의할 점은 곱셈은 행렬의 곱이 아닌 각 값들이 서로 곱해지는 형식으로 진행됩니다.**
+#
+```
 arr1 = np.array([[10, 20, 30], [100, 200, 300]])
 arr2 = np.array(([5, 6, 7], [5, 6, 7]))
 
@@ -413,6 +440,11 @@ print (vertical)
 
 
 ```python
+14. 브로드캐스트
+```
+브로드캐스트란, 서로 크기가 다른 배열이 조건이 맞을 경우 연산이 가능하게끔 하는 것입니다.
+이렇게 가로, 세로 모두 인식을 해서 계산을 할 수 있습니다.
+#
 difarr = np.array([100,200,300,400])
 sumarr2 = onearr + difarr
 print (sumarr2)
@@ -490,11 +522,12 @@ print (arr2[:3,:1])
 
 
 ```python
-#numpy의 함수들
-#진짜 많다 여기 있는게 다가 아니다
+15. 배열의 인덱싱
 ```
-
-
+배열에서 사용하는 인덱싱은 기존의 인덱싱과 비슷합니다. 0에서 시작하는 것을 유의하시기 바랍니다.
+:를 통해 인덱싱의 범위를 지정할 수 있습니다.
+#
+밑에는 numpy의 함수들입니다. 이러한 함수가 있다는 것을 알고 넘어가시면 될거 같습니다.
 ```python
 arr1 = np.random.random(10)
 arr2 = np.random.randn(10)
@@ -654,8 +687,11 @@ print (np.sort(arr1)[::-1])
     
 
 ```python
+16. 배열의 정렬
 ```
-
+배열의 정렬을 다음과 같이 할 수 있습니다. np.sort(arr1)은 arr1배열을 오름차순으로 정렬합니다.
+뒤에 ::-1이 붙으면 내림차순으로 정렬합니다.
+#
 # Pandas 배워보기
 
 ```python
