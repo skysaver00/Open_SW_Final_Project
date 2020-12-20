@@ -127,6 +127,7 @@ one, ten 변수를 선언하고, 리스트를 저장합니다.
 
 type(one)은 one의 타입을 출력합니다. list라고 나오게 됩니다.
 
+```
 onearr = np.array(one)
 tenarr = np.array(ten)
 print (onearr)
