@@ -96,7 +96,8 @@ print (pd.__version__)
 ```
 import numpy as np
 import pandas as pd로 해당 python notebook에서 numpy와 pandas를 불러옵니다.
-print (np.__version__)은 해당 numpy의 버전을 출력합니다.
+
+print (np._version_)은 해당 numpy의 버전을 출력합니다.
 
 ```python
 one = [1,2,3,4,5]
@@ -120,6 +121,12 @@ type (one)
 
 
 ```python
+```
+one = [1,2,3,4,5], ten = [10,20,30,40,50]으로
+one, ten 변수를 선언하고, 리스트를 저장합니다.
+
+type(one)은 one의 타입을 출력합니다. list라고 나오게 됩니다.
+
 onearr = np.array(one)
 tenarr = np.array(ten)
 print (onearr)
