@@ -59,17 +59,21 @@ Pandas에서 사용하는 자료구조는 크게 두가지로 나뉩니다 첫�
 Window의 시작 버튼을 누르고, 명령 프롬프트(CMD)를 관리자 권한으로 실행한 뒤,
 
 **pip install numpy**
+
 **pip install pandas**를 입력합니다.
 
 이후 파이썬을 실행해서(Window 시작화면에서 IDLE 검색한 뒤 실행)
-**import numpy as np
-import pandas as pd**를 실행하고, 오류 없이 정상적을 실행되면 설치가 완료되어 쓸 수 있습니다.
+**import numpy as np**
+
+**import pandas as pd**를 실행하고, 오류 없이 정상적을 실행되면 설치가 완료되어 쓸 수 있습니다.
 
 - import numpy as np를 입력한뒤, RuntimeError:가 뜹니다.
 현재 numpy의 최신 버전이 윈도우 운영체제와 충돌하는 이슈가 있습니다.
 최신버전인 1.19.4 버전 대신,
-**pip uninstall numpy
-pip install numpy==1.19.3**을 명령 프롬프트 창에서 실행하시면 정상적으로 설치가 완료됩니다.
+
+**pip uninstall numpy**
+
+**pip install numpy==1.19.3**을 명령 프롬프트 창에서 실행하시면 정상적으로 설치가 완료됩니다.
 
 # Numpy 배워보기
 
