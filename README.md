@@ -120,7 +120,7 @@ type (one)
 
 
 
-```
+```python```
 
 one = [1,2,3,4,5], ten = [10,20,30,40,50]으로
 one, ten 변수를 선언하고, 리스트를 저장합니다.
@@ -149,7 +149,7 @@ type (onearr)
 
 
 
-```python
+```python```
 ```
 one, ten 변수를 nd.array를 통해 onearr, tenarr에 numpy배열로 저장합니다.
 이들을 출력하면 위의 리스트에서 ,가 빠진 값이 나옵니다.
