@@ -630,3 +630,692 @@ print (np.sort(arr1)[::-1])
 ```
 
 # Pandas 배워보기
+
+```python
+import pandas as pd
+import numpy as np
+```
+
+
+```python
+data = {'name': ['YoungWoo', 'DomgHo', 'Minsu', 'Hong', 'Kwangsung'],
+        'year': [2013, 2014, 2015, 2016, 2015],
+        'points': [1.5, 1.7, 3.6, 2.4, 2.9]}
+
+df = pd.DataFrame(data)
+print (df)
+```
+
+            name  year  points
+    0   YoungWoo  2013     1.5
+    1     DomgHo  2014     1.7
+    2      Minsu  2015     3.6
+    3       Hong  2016     2.4
+    4  Kwangsung  2015     2.9
+    
+
+
+```python
+df
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>year</th>
+      <th>points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>YoungWoo</td>
+      <td>2013</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>DomgHo</td>
+      <td>2014</td>
+      <td>1.7</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Minsu</td>
+      <td>2015</td>
+      <td>3.6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Hong</td>
+      <td>2016</td>
+      <td>2.4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Kwangsung</td>
+      <td>2015</td>
+      <td>2.9</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+csv = pd.read_csv('C:/Users/김영우/jupyter/example.csv')
+csv
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>NAME</th>
+      <th>나이</th>
+      <th>점수</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Kim</td>
+      <td>23</td>
+      <td>75</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Lee</td>
+      <td>19</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Choi</td>
+      <td>20</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Song</td>
+      <td>23</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Hwang</td>
+      <td>25</td>
+      <td>83</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+print (df.columns)
+print (csv.columns)
+```
+
+    Index(['name', 'year', 'points'], dtype='object')
+    Index(['ID', 'NAME', '나이', '점수'], dtype='object')
+    
+
+
+```python
+print (df.values)
+print (csv.values)
+```
+
+    [['YoungWoo' 2013 1.5]
+     ['DomgHo' 2014 1.7]
+     ['Minsu' 2015 3.6]
+     ['Hong' 2016 2.4]
+     ['Kwangsung' 2015 2.9]]
+    [[1 'Kim' 23 75]
+     [2 'Lee' 19 80]
+     [3 'Choi' 20 59]
+     [4 'Song' 23 90]
+     [5 'Hwang' 25 83]]
+    
+
+
+```python
+df.describe()
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>5.000000</td>
+      <td>5.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>2014.600000</td>
+      <td>2.420000</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>1.140175</td>
+      <td>0.864292</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>2013.000000</td>
+      <td>1.500000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>2014.000000</td>
+      <td>1.700000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>2015.000000</td>
+      <td>2.400000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>2015.000000</td>
+      <td>2.900000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>2016.000000</td>
+      <td>3.600000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+csv.describe()
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>나이</th>
+      <th>점수</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>5.000000</td>
+      <td>5.00000</td>
+      <td>5.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>3.000000</td>
+      <td>22.00000</td>
+      <td>77.400000</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>1.581139</td>
+      <td>2.44949</td>
+      <td>11.631853</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+      <td>19.00000</td>
+      <td>59.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>2.000000</td>
+      <td>20.00000</td>
+      <td>75.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>3.000000</td>
+      <td>23.00000</td>
+      <td>80.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>4.000000</td>
+      <td>23.00000</td>
+      <td>83.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>5.000000</td>
+      <td>25.00000</td>
+      <td>90.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+df['zero'] = np.zeros(5)
+df
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>year</th>
+      <th>points</th>
+      <th>zero</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>YoungWoo</td>
+      <td>2013</td>
+      <td>1.5</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>DomgHo</td>
+      <td>2014</td>
+      <td>1.7</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Minsu</td>
+      <td>2015</td>
+      <td>3.6</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Hong</td>
+      <td>2016</td>
+      <td>2.4</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Kwangsung</td>
+      <td>2015</td>
+      <td>2.9</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+csv['random'] = np.random.rand(5)
+csv['random'] *= 10
+csv
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>NAME</th>
+      <th>나이</th>
+      <th>점수</th>
+      <th>random</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Kim</td>
+      <td>23</td>
+      <td>75</td>
+      <td>1.859625</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Lee</td>
+      <td>19</td>
+      <td>80</td>
+      <td>0.588391</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Choi</td>
+      <td>20</td>
+      <td>59</td>
+      <td>8.702442</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Song</td>
+      <td>23</td>
+      <td>90</td>
+      <td>7.638486</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Hwang</td>
+      <td>25</td>
+      <td>83</td>
+      <td>9.592227</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+del df['zero']
+df
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>year</th>
+      <th>points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>YoungWoo</td>
+      <td>2013</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>DomgHo</td>
+      <td>2014</td>
+      <td>1.7</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Minsu</td>
+      <td>2015</td>
+      <td>3.6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Hong</td>
+      <td>2016</td>
+      <td>2.4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Kwangsung</td>
+      <td>2015</td>
+      <td>2.9</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+val = pd.Series([10, 20, 30, 40, 50])
+df['tens'] = val
+df
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>year</th>
+      <th>points</th>
+      <th>tens</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>YoungWoo</td>
+      <td>2013</td>
+      <td>1.5</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>DomgHo</td>
+      <td>2014</td>
+      <td>1.7</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Minsu</td>
+      <td>2015</td>
+      <td>3.6</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Hong</td>
+      <td>2016</td>
+      <td>2.4</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Kwangsung</td>
+      <td>2015</td>
+      <td>2.9</td>
+      <td>50</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+print (df.sum(axis = 0))
+print (df.sum(axis = 1))
+print (df.min(axis = 0))
+```
+
+    name      YoungWooDomgHoMinsuHongKwangsung
+    year                                 10073
+    points                                12.1
+    tens                                   150
+    dtype: object
+    0    2024.5
+    1    2035.7
+    2    2048.6
+    3    2058.4
+    4    2067.9
+    dtype: float64
+    name      DomgHo
+    year        2013
+    points       1.5
+    tens          10
+    dtype: object
+    
+
+
+```python
+
+```
