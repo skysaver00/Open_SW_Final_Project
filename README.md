@@ -120,7 +120,7 @@ type (one)
 
 
 
-```python
+```python```
 
 one = [1,2,3,4,5], ten = [10,20,30,40,50]으로
 one, ten 변수를 선언하고, 리스트를 저장합니다.
@@ -134,7 +134,7 @@ print (onearr)
 print (tenarr)
 
 type (onearr)
-```
+
 ```
 
     [1 2 3 4 5]
