@@ -94,7 +94,9 @@ print (pd.__version__)
 #np array 만들기
 #여기서부터는 array = 배열로 취급
 ```
-
+import numpy as np
+import pandas as pd로 해당 python notebook에서 numpy와 pandas를 불러옵니다.
+print (np.__version__)은 해당 numpy의 버전을 출력합니다.
 
 ```python
 one = [1,2,3,4,5]
